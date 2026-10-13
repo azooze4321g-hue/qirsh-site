@@ -1,359 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<!--
-  Fail-safe language switching. The `js` class is added ONLY if scripts run; the CSS below hides one
-  language only when that class is present. So if JavaScript is blocked or fails, BOTH languages render
-  in full rather than the Arabic silently disappearing — the wrong failure for a document a user or a
-  regulator may need to read.
--->
-<script>document.documentElement.className += ' js';</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qirsh — Terms of Service · شروط الاستخدام</title>
-<style>
-  :root{
-    --bg:#FBF7F0; --card:#FFFFFF; --ink:#1C1917; --muted:#6B6560;
-    --line:#E7E0D6; --gold:#B8860B; --accent:#8A6D1F;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#0E0D0C; --card:#1A1817; --ink:#F5F1EA; --muted:#A8A29A;
-           --line:#2C2926; --gold:#D4A537; --accent:#E0BC5E; }
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
-  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 80px}
-  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
-  .brand{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
-  h1{font-size:30px;line-height:1.25;margin:10px 0 6px}
-  .meta{color:var(--muted);font-size:14px;margin:0}
-  .toggle{display:flex;gap:8px;margin:18px 0 0}
-  .toggle button{font:inherit;font-size:14px;padding:7px 16px;border-radius:999px;
-    border:1.5px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
-  .toggle button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold);font-weight:600}
-  h2{font-size:20px;margin:34px 0 10px}
-  p,li{color:var(--ink)}
-  ul{padding-inline-start:22px} li{margin:6px 0}
-  .lede{background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--gold);
-    border-radius:12px;padding:16px 18px;margin:22px 0}
-  .lede p{margin:0 0 10px} .lede p:last-child{margin:0}
-  .warn{background:var(--card);border:1px solid var(--line);border-inline-start:4px solid #C2410C;
-    border-radius:12px;padding:16px 18px;margin:22px 0}
-  code{background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:14px}
-  .fill{background:#FFF3CD;color:#5C4400;border-radius:4px;padding:1px 6px;font-weight:600}
-  @media (prefers-color-scheme: dark){ .fill{background:#4A3A0C;color:#F5E6B8} }
-  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-  [dir="rtl"]{text-align:right}
-  /* Only with JS: show one language at a time. Without JS both remain visible (see the note in <head>). */
-  html.js #ar{display:none}
-  html.js.lang-ar #ar{display:block}
-  html.js.lang-ar #en{display:none}
-  html:not(.js) #ar{border-top:2px solid var(--line);margin-top:40px;padding-top:24px}
-</style>
+<title>Qirsh · قرش — Terms · الشروط</title>
+<meta name="description" content="Terms of use for Qirsh. شروط استخدام قرش.">
+<link rel="canonical" href="https://qirshapp.com/terms">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Qirsh · قرش — Terms · الشروط">
+<meta property="og:description" content="Terms of use for Qirsh. شروط استخدام قرش.">
+<meta property="og:url" content="https://qirshapp.com/terms">
+<meta property="og:image" content="https://qirshapp.com/assets/img/icon-512.png">
+<meta name="theme-color" content="#EFEBE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){var d=document.documentElement,q=null,l=null;
+try{q=new URLSearchParams(location.search).get('lang');l=localStorage.getItem('qirsh-lang')}catch(e){}
+if(q==='ar'||q==='en'){l=q;try{localStorage.setItem('qirsh-lang',l)}catch(e){}}
+if(l!=='ar'&&l!=='en'){var n=navigator.languages||[navigator.language||''];l='en';
+for(var i=0;i<n.length;i++){if(/^ar\b/i.test(n[i])){l='ar';break}}}
+d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
 </head>
 <body>
-<div class="wrap">
+<header class="top"><div class="bar">
+  <a class="brand" href="/"><img src="/assets/img/icon-192.png" alt="" width="36" height="36"><span class="l-en">Qirsh</span><span class="l-ar">قرش</span></a>
+  <nav aria-label="Main">
+    <a href="/#features"><span class="l-en">Features</span><span class="l-ar">المميزات</span></a>
+    <a href="/support"><span class="l-en">Support</span><span class="l-ar">الدعم</span></a>
+    <a href="/privacy"><span class="l-en">Privacy</span><span class="l-ar">الخصوصية</span></a>
+  </nav>
+  <button class="lang" type="button" data-lang-toggle><span class="l-en" lang="ar">العربية</span><span class="l-ar" lang="en">English</span></button>
+</div></header>
+<main>
+<!-- Shown at /privacy and /terms while "legalPublished" is false in site.config.json. -->
+<div class="doc l-en" lang="en" dir="ltr">
+  <h1>Terms of use</h1>
+  <div class="note"><p><b>Qirsh is not available to the public yet.</b></p><p>The terms of use will be published on this page before the app is released.</p></div>
+  <h2>What is true today</h2>
+  <p>This website does not use cookies, analytics or forms. It remembers your language choice in your own browser and nothing else.</p>
+  <p>If you email us, we use your address only to reply to you.</p>
+  <p>Questions: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+</div>
 
-<p class="meta"><a href="/">qirshapp.com</a></p>
-<header>
-  <div class="brand">Qirsh · قرش</div>
-  <h1>Terms of Service <span style="color:var(--muted)">·</span> شروط الاستخدام</h1>
-  <p class="meta">
-    Last updated / آخر تحديث: 13 October 2026 &nbsp;·&nbsp; App version 1.0
-  </p>
-  <div class="toggle">
-    <button id="btn-en" aria-pressed="true">English</button>
-    <button id="btn-ar" aria-pressed="false">العربية</button>
+<div class="doc l-ar" lang="ar" dir="rtl">
+  <h1>شروط الاستخدام</h1>
+  <div class="note"><p><b>قرش ما نزل للناس للحين.</b></p><p>بننشر شروط الاستخدام في هذي الصفحة قبل ما ينزل التطبيق.</p></div>
+  <h2>اللي صحيح اليوم</h2>
+  <p>هذا الموقع بدون كوكيز وبدون أدوات تتبّع وبدون نماذج. يحفظ اختيارك للغة في متصفحك أنت، ولا شي غيره.</p>
+  <p>وإذا راسلتنا، نستخدم إيميلك عشان نرد عليك بس.</p>
+  <p>للأسئلة: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+</div>
+
+</main>
+<footer class="foot"><div class="wrap">
+  <div class="l-en" lang="en" dir="ltr">
+    <p class="links"><a href="/">Home</a><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></p>
+    <p>Contact: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+    <p class="fine">© 2026 Qirsh · Saudi Arabia</p>
   </div>
-</header>
-
-<!-- ══════════════════════════ ENGLISH ══════════════════════════ -->
-<section id="en" lang="en" dir="ltr">
-
-<div class="lede">
-  <p><strong>The short version.</strong> Qirsh helps you plan your spending between paydays. It is a
-  calculator and a notebook — not a bank, not a broker, and not a financial adviser. It never moves your
-  money and it has no access to your bank accounts.</p>
-  <p>Your data lives on your phone. Keeping it safe is a shared job: we encrypt it, you keep your phone
-  and your backups. If you uninstall the app without a Pro cloud backup, that data is gone.</p>
-</div>
-
-<h2>1. These terms</h2>
-<p>These terms are an agreement between you and Qirsh Labs
-(“we”, “us”) for your use of the Qirsh mobile app. By installing or using Qirsh you accept them. If you
-do not accept them, do not use the app.</p>
-<p>Our <a href="./privacy-policy.html">Privacy Policy</a> explains what we do with data and forms part of
-these terms.</p>
-
-<h2>2. Who may use Qirsh</h2>
-<p>You must be at least <strong>16 years old</strong> (or the minimum age of digital consent where you
-live, if higher). If you use Qirsh on behalf of an organisation, you confirm you are authorised to accept
-these terms for it.</p>
-
-<div class="warn">
-  <h2 style="margin-top:0">3. Qirsh is not financial advice</h2>
-  <p>This is the most important term here, so we are stating it on its own.</p>
-  <p>Qirsh shows you arithmetic based on numbers <em>you</em> enter: how much you have left, how much you
-  could spend per day, how long a goal will take. <strong>These are estimates and planning aids, not
-  financial, investment, tax, legal or religious (Shariah) advice</strong>, and they are not a
-  recommendation to spend, save, borrow or buy anything.</p>
-  <p><strong>The same is true of the assistant.</strong> Its replies are written by an AI model from your
-  own records in the app. They can be wrong or incomplete, and they are not advice. Check a figure in
-  the app before you rely on it.</p>
-  <p>You remain solely responsible for your financial decisions. For advice about your circumstances,
-  speak to a qualified professional.</p>
-  <p>Qirsh is <strong>not a bank, not a payment service and not a money transmitter.</strong> It does not
-  connect to your bank accounts, it cannot move, hold or transfer money, and it cannot make a payment on
-  your behalf. Every figure in the app is a record you created or approved.</p>
-</div>
-
-<h2>4. Your account</h2>
-<p>Most of Qirsh works with no account at all. An account is needed only for the assistant, for buying
-Qirsh Pro, and for cloud backup.</p>
-<ul>
-  <li>Give accurate information when you sign up, and keep your sign-in details to yourself.</li>
-  <li>You are responsible for activity under your account. Tell us promptly at
-  support@qirshapp.com if you believe it has been used without your permission.</li>
-  <li>You may delete your account at any time from <strong>Profile → Account → Delete account &amp;
-  data</strong>. Deletion is permanent and removes your account record, your subscription record, your
-  assistant usage counters and your cloud backup. It does not cancel a subscription bought through a
-  store; cancel that in the store.</li>
-</ul>
-
-<h2>5. Qirsh Pro, billing and cancellation</h2>
-<ul>
-  <li>Qirsh has a free tier that does not expire. <strong>Qirsh Pro</strong> is a paid subscription that
-  unlocks additional features, including cloud backup, Excel export and a larger allowance for the
-  assistant.</li>
-  <li>You need to be <strong>signed in</strong> to your Qirsh account to buy or restore Qirsh Pro, so
-  that the subscription is attached to your account.</li>
-  <li>Use of the assistant is limited by an allowance. The app shows how much of it you have used, and
-  we may adjust it.</li>
-  <li>Subscriptions are sold and billed by the <strong>Apple App Store</strong> or
-  <strong>Google Play</strong>, under their terms — not by us. Prices are shown in the store before you
-  buy.</li>
-  <li>Subscriptions <strong>renew automatically</strong> until you cancel. Cancel any time in your App
-  Store or Google Play account settings; cancelling stops the next renewal and you keep Pro until the end
-  of the period you already paid for.</li>
-  <li>If a <strong>free trial</strong> is offered, it becomes a paid subscription at the price shown
-  when the trial ends, unless you cancel at least a day before it ends.</li>
-  <li><strong>Refunds are handled by the store</strong> under its own policy. We cannot issue refunds for
-  a purchase we did not process, though we will help you where we can.</li>
-  <li>If a subscription lapses, your data is not deleted — Pro-only features simply stop, and everything
-  stays on your device.</li>
-  <li>We may change Pro’s price or what it includes. If a change is to your disadvantage we will give you
-  notice in the app beforehand, and you can cancel.</li>
-</ul>
-
-<h2>6. Your data, and your responsibility for it</h2>
-<p>You own what you put into Qirsh. We claim no ownership of your financial records.</p>
-<p>Because Qirsh is built local-first, please understand what that means in practice:</p>
-<ul>
-  <li>Your data is stored on your device, encrypted (see the Privacy Policy).</li>
-  <li><strong>Without a Pro cloud backup, we hold no copy.</strong> If you delete the app, lose the phone,
-  wipe the device, or your storage becomes corrupted, we cannot recover your data for you — we never had
-  it.</li>
-  <li>Cloud backup is a convenience, not a guarantee. Keep your own records of anything you cannot afford
-  to lose.</li>
-</ul>
-
-<h2>7. Acceptable use</h2>
-<p>Please do not:</p>
-<ul>
-  <li>Break the law with the app, or use it to launder money or hide unlawful activity.</li>
-  <li>Reverse engineer, decompile or tamper with the app except where the law expressly permits it.</li>
-  <li>Attack, overload or probe our systems, or attempt to reach another user’s data.</li>
-  <li>Resell, sublicense or redistribute the app or a Pro subscription.</li>
-  <li>Use automated means to create accounts or generate load.</li>
-</ul>
-
-<h2>8. Availability and changes</h2>
-<p>We may update, change or discontinue features. We aim to keep Qirsh available, but we do not promise
-it will be uninterrupted or error-free: app stores, operating systems, devices and our hosting provider
-are all outside our control.</p>
-<p>If we ever discontinue the service entirely, we will give reasonable notice in the app so you can
-export or record your data first.</p>
-
-<h2>9. No warranty</h2>
-<p>To the fullest extent the law allows, Qirsh is provided <strong>“as is” and “as available”</strong>,
-without warranties of any kind, express or implied — including fitness for a particular purpose and
-non-infringement. <strong>We do not warrant that the figures shown are free of error</strong>, and you
-should check anything you are relying on for a real decision.</p>
-
-<h2>10. Limitation of liability</h2>
-<p>To the fullest extent the law allows, we are not liable for indirect, incidental, special or
-consequential loss, or for loss of profits, savings, data or goodwill, arising from your use of Qirsh —
-including any financial decision you make using it.</p>
-<p>Our total liability to you for any claim relating to Qirsh is limited to the greater of
-<strong>the amount you paid us in the 12 months before the claim</strong> or
-SAR 200.</p>
-<p>Nothing here excludes liability that cannot lawfully be excluded — including for death or personal
-injury caused by negligence, or for fraud.</p>
-
-<h2>11. Suspension and termination</h2>
-<p>You may stop using Qirsh at any time by deleting the app, and delete your account from within it. We
-may suspend or terminate access if you materially breach these terms, or if we must do so by law — where
-practical, with notice and a chance to put things right.</p>
-
-<h2>12. Governing law</h2>
-<p>These terms are governed by the laws of the Kingdom of Saudi Arabia, and
-the courts of the Kingdom of Saudi Arabia have jurisdiction. If you are a consumer,
-this does not remove any protection you have under the mandatory law of your own country of residence.</p>
-
-<h2>13. Changes to these terms</h2>
-<p>We may update these terms. The date at the top will change, and for material changes we will notify
-you in the app before they take effect. Continuing to use Qirsh after that means you accept the updated
-terms.</p>
-
-<h2>14. Contact</h2>
-<p>Qirsh Labs · support@qirshapp.com</p>
-
-</section>
-
-<!-- ══════════════════════════ ARABIC ══════════════════════════ -->
-<section id="ar" lang="ar" dir="rtl">
-
-<div class="lede">
-  <p><strong>باختصار.</strong> قرش يساعدك تخطّط صرفك بين راتب وراتب. هو آلة حاسبة ودفتر — مو بنك، ولا
-  وسيط، ولا مستشار مالي. ما يحرّك فلوسك أبداً، وما عنده أي وصول لحساباتك البنكية.</p>
-  <p>بياناتك على جوالك. وحمايتها مسؤولية مشتركة: إحنا نشفّرها، وأنت تحافظ على جوالك ونسخك الاحتياطية.
-  وإذا حذفت التطبيق بدون نسخة احتياطية في برو، البيانات تروح.</p>
-</div>
-
-<h2>١. هذي الشروط</h2>
-<p>هذي الشروط اتفاقية بينك وبين Qirsh Labs بخصوص
-استخدامك لتطبيق قرش. وبتثبيتك أو استخدامك للتطبيق فأنت توافق عليها. وإذا ما توافق، لا تستخدم التطبيق.</p>
-<p>و<a href="./privacy-policy.html">سياسة الخصوصية</a> توضّح وش نسوّي بالبيانات، وهي جزء من هذي الشروط.</p>
-
-<h2>٢. مين يقدر يستخدم قرش</h2>
-<p>يلزم أن يكون عمرك <strong>١٦ سنة</strong> على الأقل (أو السن النظامي للموافقة الرقمية في بلدك إذا كان
-أعلى). وإذا كنت تستخدم قرش نيابة عن جهة، فأنت تؤكد أنك مخوّل بقبول هذي الشروط عنها.</p>
-
-<div class="warn">
-  <h2 style="margin-top:0">٣. قرش ليس استشارة مالية</h2>
-  <p>هذا أهم بند هنا، ولذلك نذكره لحاله.</p>
-  <p>قرش يعرض لك حسابات مبنية على أرقام <em>أنت</em> تدخلها: كم باقي لك، وكم تقدر تصرف يومياً، وكم بياخذ
-  هدفك. <strong>هذي تقديرات وأدوات تخطيط، وليست استشارة مالية أو استثمارية أو ضريبية أو نظامية أو
-  شرعية</strong>، وليست توصية بالصرف أو الادخار أو الاقتراض أو الشراء.</p>
-  <p><strong>ونفس الشيء ينطبق على المساعد.</strong> ردوده يكتبها نموذج ذكاء اصطناعي من سجلاتك في
-  التطبيق. وممكن تكون غلط أو ناقصة، وليست استشارة. تأكد من الرقم داخل التطبيق قبل ما تعتمد عليه.</p>
-  <p>وتبقى أنت وحدك المسؤول عن قراراتك المالية. وللاستشارة في وضعك الخاص، راجع مختصاً مؤهلاً.</p>
-  <p>قرش <strong>ليس بنكاً، ولا خدمة دفع، ولا جهة تحويل أموال.</strong> ما يرتبط بحساباتك البنكية، وما
-  يقدر يحرّك أو يحفظ أو يحوّل أموالاً، وما يقدر يسوّي أي عملية دفع نيابة عنك. وكل رقم في التطبيق سجّل
-  أنشأته أنت أو وافقت عليه.</p>
-</div>
-
-<h2>٤. حسابك</h2>
-<p>أغلب قرش يشتغل بدون أي حساب. والحساب مطلوب فقط للمساعد، ولشراء قرش برو، وللنسخ الاحتياطي السحابي.</p>
-<ul>
-  <li>أعطِ معلومات صحيحة عند التسجيل، واحتفظ ببيانات دخولك لنفسك.</li>
-  <li>أنت مسؤول عن النشاط تحت حسابك. وبلّغنا بسرعة على support@qirshapp.com
-  إذا شكّيت أنه استُخدم بدون إذنك.</li>
-  <li>تقدر تحذف حسابك في أي وقت من <strong>الملف ← الحساب ← حذف الحساب والبيانات</strong>. والحذف نهائي
-  ويزيل سجل حسابك وسجل اشتراكك وعدّادات استخدامك للمساعد ونسختك الاحتياطية. وما يلغي اشتراكاً اشتريته
-  من المتجر؛ ألغِه من المتجر.</li>
-</ul>
-
-<h2>٥. قرش برو والفوترة والإلغاء</h2>
-<ul>
-  <li>لقرش باقة مجانية ما تنتهي. و<strong>قرش برو</strong> اشتراك مدفوع يفتح مزايا إضافية، منها النسخ
-  الاحتياطي السحابي وتصدير Excel وحد استخدام أكبر للمساعد.</li>
-  <li>لازم تكون <strong>مسجّل دخول</strong> في حسابك في قرش عشان تشتري قرش برو أو تستعيده، حتى يرتبط
-  الاشتراك بحسابك.</li>
-  <li>استخدام المساعد له حد. والتطبيق يبيّن لك كم استخدمت منه، وممكن نعدّله.</li>
-  <li>الاشتراكات تُباع وتُحصَّل عبر <strong>متجر Apple</strong> أو <strong>Google Play</strong> وفق
-  شروطهم — مو عن طريقنا. والأسعار تظهر لك في المتجر قبل الشراء.</li>
-  <li>الاشتراكات <strong>تتجدّد تلقائياً</strong> إلى أن تلغي. وتقدر تلغي في أي وقت من إعدادات حسابك في
-  المتجر؛ والإلغاء يوقف التجديد القادم وتبقى برو معك إلى نهاية المدة اللي دفعت عنها.</li>
-  <li>إذا فيه <strong>تجربة مجانية</strong>، تتحول إلى اشتراك مدفوع بالسعر المعروض عند نهايتها، إلا إذا
-  ألغيت قبل نهايتها بيوم على الأقل.</li>
-  <li><strong>الاسترداد يتولّاه المتجر</strong> وفق سياسته. وما نقدر نسترد مبلغاً ما عالجناه إحنا، لكن
-  بنساعدك قدر ما نقدر.</li>
-  <li>إذا انتهى الاشتراك، بياناتك ما تُحذف — تتوقف مزايا برو فقط، ويبقى كل شيء على جهازك.</li>
-  <li>ممكن نغيّر سعر برو أو محتواه. وإذا كان التغيير في غير صالحك، بنبلّغك داخل التطبيق قبلها، وتقدر تلغي.</li>
-</ul>
-
-<h2>٦. بياناتك ومسؤوليتك عنها</h2>
-<p>أنت تملك ما تدخله في قرش. وإحنا ما ندّعي ملكية سجلاتك المالية.</p>
-<p>ولأن قرش مبني على مبدأ ”الجهاز أولاً“، خلّنا نوضّح وش يعني هذا عملياً:</p>
-<ul>
-  <li>بياناتك محفوظة على جهازك ومشفّرة (راجع سياسة الخصوصية).</li>
-  <li><strong>بدون نسخة احتياطية في برو، ما عندنا أي نسخة.</strong> فإذا حذفت التطبيق، أو ضاع الجوال، أو
-  مسحت الجهاز، أو تلف التخزين — ما نقدر نرجّع لك بياناتك، لأنها ما وصلتنا أصلاً.</li>
-  <li>النسخ الاحتياطي وسيلة راحة، مو ضمان. احتفظ بسجلاتك الخاصة لأي شيء ما تتحمّل فقدانه.</li>
-</ul>
-
-<h2>٧. الاستخدام المقبول</h2>
-<p>من فضلك لا:</p>
-<ul>
-  <li>تخالف النظام بالتطبيق، ولا تستخدمه لغسل أموال أو إخفاء نشاط غير نظامي.</li>
-  <li>تعكس هندسة التطبيق أو تفكّه أو تعبث فيه، إلا في الحدود اللي يجيزها النظام صراحة.</li>
-  <li>تهاجم أنظمتنا أو تُثقلها أو تفحصها، أو تحاول الوصول لبيانات مستخدم ثاني.</li>
-  <li>تعيد بيع التطبيق أو اشتراك برو أو ترخيصه من الباطن أو توزّعه.</li>
-  <li>تستخدم وسائل آلية لإنشاء حسابات أو توليد ضغط على الخدمة.</li>
-</ul>
-
-<h2>٨. التوفّر والتغييرات</h2>
-<p>ممكن نحدّث المزايا أو نغيّرها أو نوقفها. ونسعى أن يبقى قرش متاحاً، لكن ما نعد بأنه بيكون بلا انقطاع
-أو بلا أخطاء: المتاجر وأنظمة التشغيل والأجهزة ومزوّد الاستضافة كلها خارج سيطرتنا.</p>
-<p>وإذا أوقفنا الخدمة كلياً يوماً ما، بنعطي مهلة معقولة داخل التطبيق عشان تسجّل بياناتك أو تصدّرها أولاً.</p>
-
-<h2>٩. إخلاء الضمانات</h2>
-<p>إلى أقصى حد يسمح به النظام، يُقدَّم قرش <strong>”كما هو“ و”حسب توفّره“</strong> دون أي ضمانات صريحة
-أو ضمنية — بما فيها الملاءمة لغرض معيّن وعدم التعدّي. <strong>وما نضمن خلو الأرقام المعروضة من
-الخطأ</strong>، ويجدر بك التحقق من أي رقم تبني عليه قراراً حقيقياً.</p>
-
-<h2>١٠. حدود المسؤولية</h2>
-<p>إلى أقصى حد يسمح به النظام، ما نتحمّل الأضرار غير المباشرة أو العرضية أو الخاصة أو التبعية، ولا فوات
-الأرباح أو المدخرات أو البيانات أو السمعة، الناشئة عن استخدامك لقرش — بما في ذلك أي قرار مالي تتخذه
-بالاعتماد عليه.</p>
-<p>وإجمالي مسؤوليتنا تجاهك عن أي مطالبة تتعلق بقرش محدود بالأكبر من: <strong>ما دفعته لنا خلال ١٢ شهراً
-قبل المطالبة</strong>، أو ٢٠٠ ريال.</p>
-<p>ولا يستثني أي بند هنا مسؤولية لا يجوز نظاماً استثناؤها — بما فيها الوفاة أو الإصابة الجسدية الناتجة عن
-الإهمال، أو الاحتيال.</p>
-
-<h2>١١. الإيقاف والإنهاء</h2>
-<p>تقدر توقف استخدام قرش في أي وقت بحذف التطبيق، وتحذف حسابك من داخله. وإحنا ممكن نوقف وصولك أو ننهيه إذا
-خالفت هذي الشروط مخالفة جوهرية، أو إذا لزمنا النظام بذلك — وبإشعار وفرصة للتصحيح متى ما كان ذلك عملياً.</p>
-
-<h2>١٢. النظام الواجب التطبيق</h2>
-<p>تخضع هذي الشروط لأنظمة المملكة العربية السعودية، وتختص محاكم
-المملكة العربية السعودية بالنظر في أي نزاع. وإذا كنت مستهلكاً، فهذا
-لا يسقط أي حماية مقرّرة لك بموجب الأنظمة الآمرة في بلد إقامتك.</p>
-
-<h2>١٣. تغييرات هذي الشروط</h2>
-<p>ممكن نحدّث هذي الشروط. وبيتغيّر التاريخ في الأعلى، وللتغييرات الجوهرية بنبلّغك داخل التطبيق قبل
-سريانها. واستمرارك في استخدام قرش بعدها يعني قبولك بالشروط المحدّثة.</p>
-
-<h2>١٤. التواصل</h2>
-<p>Qirsh Labs · support@qirshapp.com</p>
-
-</section>
-
-<footer>
-  Qirsh · قرش — Qirsh Labs · support@qirshapp.com
-</footer>
-
-</div>
-<script>
-  (function () {
-    var bEn = document.getElementById('btn-en'), bAr = document.getElementById('btn-ar');
-    function show(lang) {
-      var isAr = lang === 'ar';
-      // A class on the root, not `hidden` on the sections — so the no-JS fallback in <head> holds.
-      document.documentElement.classList.toggle('lang-ar', isAr);
-      bAr.setAttribute('aria-pressed', String(isAr));
-      bEn.setAttribute('aria-pressed', String(!isAr));
-      document.documentElement.lang = lang;
-      try { localStorage.setItem('qirsh-legal-lang', lang); } catch (e) {}
-    }
-    bEn.addEventListener('click', function () { show('en'); });
-    bAr.addEventListener('click', function () { show('ar'); });
-    var saved = null;
-    try { saved = localStorage.getItem('qirsh-legal-lang'); } catch (e) {}
-    show(saved || ((navigator.language || '').slice(0, 2) === 'ar' ? 'ar' : 'en'));
-  })();
-</script>
+  <div class="l-ar" lang="ar" dir="rtl">
+    <p class="links"><a href="/">الرئيسية</a><a href="/support">الدعم</a><a href="/privacy">الخصوصية</a><a href="/terms">الشروط</a></p>
+    <p>للتواصل: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+    <p class="fine">© 2026 قرش · المملكة العربية السعودية</p>
+  </div>
+</div></footer>
+<script>(function(){var d=document.documentElement;
+function set(l){d.className=d.className.replace(/\blang-(ar|en)\b/,'lang-'+l);d.lang=l;d.dir=l==='ar'?'rtl':'ltr';
+try{localStorage.setItem('qirsh-lang',l)}catch(e){}}
+var b=document.querySelectorAll('[data-lang-toggle]');
+for(var i=0;i<b.length;i++){b[i].addEventListener('click',function(){set(d.lang==='ar'?'en':'ar')})}
+function go(){var h=location.hash.slice(1).replace(/-ar$/,'');if(!h)return;
+var el=(d.lang==='ar'&&document.getElementById(h+'-ar'))||document.getElementById(h);if(el)el.scrollIntoView()}
+window.addEventListener('hashchange',go);go();})();</script>
 </body>
 </html>

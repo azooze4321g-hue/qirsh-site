@@ -1,561 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<!--
-  Fail-safe language switching. The `js` class is added ONLY if scripts run; the CSS below hides one
-  language only when that class is present. So if JavaScript is blocked or fails, BOTH languages render
-  in full rather than the Arabic silently disappearing — which is the wrong failure for a document a
-  regulator or a user may need to read.
--->
-<script>document.documentElement.className += ' js';</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qirsh — Privacy Policy · سياسة الخصوصية</title>
-<style>
-  :root{
-    --bg:#FBF7F0; --card:#FFFFFF; --ink:#1C1917; --muted:#6B6560;
-    --line:#E7E0D6; --gold:#B8860B; --accent:#8A6D1F;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#0E0D0C; --card:#1A1817; --ink:#F5F1EA; --muted:#A8A29A;
-           --line:#2C2926; --gold:#D4A537; --accent:#E0BC5E; }
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;}
-  .wrap{max-width:760px;margin:0 auto;padding:32px 20px 80px}
-  header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}
-  .brand{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
-  h1{font-size:30px;line-height:1.25;margin:10px 0 6px}
-  .meta{color:var(--muted);font-size:14px;margin:0}
-  .toggle{display:flex;gap:8px;margin:18px 0 0}
-  .toggle button{font:inherit;font-size:14px;padding:7px 16px;border-radius:999px;
-    border:1.5px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
-  .toggle button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold);font-weight:600}
-  h2{font-size:20px;margin:34px 0 10px;padding-top:6px}
-  h3{font-size:16px;margin:22px 0 6px;color:var(--accent)}
-  p,li{color:var(--ink)}
-  ul{padding-inline-start:22px}
-  li{margin:6px 0}
-  .lede{background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--gold);
-    border-radius:12px;padding:16px 18px;margin:22px 0}
-  .lede p{margin:0 0 10px} .lede p:last-child{margin:0}
-  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px;display:block;overflow-x:auto}
-  th,td{border:1px solid var(--line);padding:10px 12px;text-align:start;vertical-align:top}
-  th{background:var(--card);font-weight:600}
-  code{background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:14px}
-  .fill{background:#FFF3CD;color:#5C4400;border-radius:4px;padding:1px 6px;font-weight:600}
-  @media (prefers-color-scheme: dark){ .fill{background:#4A3A0C;color:#F5E6B8} }
-  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-  [dir="rtl"]{text-align:right}
-  /* Only with JS: show one language at a time. Without JS both remain visible (see the note in <head>). */
-  html.js #ar{display:none}
-  html.js.lang-ar #ar{display:block}
-  html.js.lang-ar #en{display:none}
-  /* No JS: separate the two languages with a rule so they don't read as one document. */
-  html:not(.js) #ar{border-top:2px solid var(--line);margin-top:40px;padding-top:24px}
-</style>
+<title>Qirsh · قرش — Privacy · الخصوصية</title>
+<meta name="description" content="How Qirsh handles your data. كيف يتعامل قرش مع بياناتك.">
+<link rel="canonical" href="https://qirshapp.com/privacy">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Qirsh · قرش — Privacy · الخصوصية">
+<meta property="og:description" content="How Qirsh handles your data. كيف يتعامل قرش مع بياناتك.">
+<meta property="og:url" content="https://qirshapp.com/privacy">
+<meta property="og:image" content="https://qirshapp.com/assets/img/icon-512.png">
+<meta name="theme-color" content="#EFEBE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){var d=document.documentElement,q=null,l=null;
+try{q=new URLSearchParams(location.search).get('lang');l=localStorage.getItem('qirsh-lang')}catch(e){}
+if(q==='ar'||q==='en'){l=q;try{localStorage.setItem('qirsh-lang',l)}catch(e){}}
+if(l!=='ar'&&l!=='en'){var n=navigator.languages||[navigator.language||''];l='en';
+for(var i=0;i<n.length;i++){if(/^ar\b/i.test(n[i])){l='ar';break}}}
+d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
 </head>
 <body>
-<div class="wrap">
+<header class="top"><div class="bar">
+  <a class="brand" href="/"><img src="/assets/img/icon-192.png" alt="" width="36" height="36"><span class="l-en">Qirsh</span><span class="l-ar">قرش</span></a>
+  <nav aria-label="Main">
+    <a href="/#features"><span class="l-en">Features</span><span class="l-ar">المميزات</span></a>
+    <a href="/support"><span class="l-en">Support</span><span class="l-ar">الدعم</span></a>
+    <a href="/privacy"><span class="l-en">Privacy</span><span class="l-ar">الخصوصية</span></a>
+  </nav>
+  <button class="lang" type="button" data-lang-toggle><span class="l-en" lang="ar">العربية</span><span class="l-ar" lang="en">English</span></button>
+</div></header>
+<main>
+<!-- Shown at /privacy and /terms while "legalPublished" is false in site.config.json. -->
+<div class="doc l-en" lang="en" dir="ltr">
+  <h1>Privacy policy</h1>
+  <div class="note"><p><b>Qirsh is not available to the public yet.</b></p><p>The full privacy policy will be published on this page before the app is released.</p></div>
+  <h2>What is true today</h2>
+  <p>This website does not use cookies, analytics or forms. It remembers your language choice in your own browser and nothing else.</p>
+  <p>If you email us, we use your address only to reply to you.</p>
+  <p>Questions: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+</div>
 
-<p class="meta"><a href="/">qirshapp.com</a></p>
-<header>
-  <div class="brand">Qirsh · قرش</div>
-  <h1>Privacy Policy <span style="color:var(--muted)">·</span> سياسة الخصوصية</h1>
-  <p class="meta">
-    Last updated / آخر تحديث: 13 October 2026 &nbsp;·&nbsp;
-    App version 1.0
-  </p>
-  <div class="toggle">
-    <button id="btn-en" aria-pressed="true">English</button>
-    <button id="btn-ar" aria-pressed="false">العربية</button>
+<div class="doc l-ar" lang="ar" dir="rtl">
+  <h1>سياسة الخصوصية</h1>
+  <div class="note"><p><b>قرش ما نزل للناس للحين.</b></p><p>بننشر سياسة الخصوصية كاملة في هذي الصفحة قبل ما ينزل التطبيق.</p></div>
+  <h2>اللي صحيح اليوم</h2>
+  <p>هذا الموقع بدون كوكيز وبدون أدوات تتبّع وبدون نماذج. يحفظ اختيارك للغة في متصفحك أنت، ولا شي غيره.</p>
+  <p>وإذا راسلتنا، نستخدم إيميلك عشان نرد عليك بس.</p>
+  <p>للأسئلة: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+</div>
+
+</main>
+<footer class="foot"><div class="wrap">
+  <div class="l-en" lang="en" dir="ltr">
+    <p class="links"><a href="/">Home</a><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></p>
+    <p>Contact: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+    <p class="fine">© 2026 Qirsh · Saudi Arabia</p>
   </div>
-</header>
-
-<!-- ══════════════════════════ ENGLISH ══════════════════════════ -->
-<section id="en" lang="en" dir="ltr">
-
-<div class="lede">
-  <p><strong>The short version.</strong> Qirsh is a budgeting app, and the budgeting works entirely on your phone. You
-  do not need an account to use it, and your financial data — your income, your transactions, your
-  goals — is stored on your device, encrypted.</p>
-  <p>We do not sell your data. We do not show ads. We do not use advertising or analytics trackers. We
-  never read your text messages.</p>
-  <p>Without an account, the only thing that leaves your phone is <strong>anonymous crash and update
-  information</strong>. If you sign in, three more things can, each only when you choose it:
-  <strong>what you ask the assistant</strong> (your question and the budget figures needed to answer
-  it), your <strong>subscription status</strong>, and — if you subscribe to Qirsh Pro and turn it on — a
-  <strong>backup</strong> of your data so you can restore it on a new phone. All of it is described in
-  full below.</p>
-</div>
-
-<h2>1. Who we are</h2>
-<p>Qirsh (“the app”, “we”, “us”) is operated by Qirsh Labs,
-Saudi Arabia. For anything in this policy, contact us at
-support@qirshapp.com.</p>
-<p>For the purposes of Saudi Arabia’s Personal Data Protection Law (PDPL) and the EU/UK General Data
-Protection Regulation (GDPR), Qirsh Labs is the <strong>data
-controller</strong> for the limited personal data described here.</p>
-
-<h2>2. What Qirsh stores on your phone</h2>
-<p>Everything you enter into Qirsh is written to your device’s own storage:</p>
-<ul>
-  <li>Your income, pay-cycle setup and payday</li>
-  <li>Transactions you add, edit or import (amount, date, category, and any note you write)</li>
-  <li>Categories, recurring bills, savings entries and wishes</li>
-  <li>Your settings — language, theme, currency, whether decimals are shown</li>
-</ul>
-<p><strong>This data stays on your device unless you turn on cloud backup (§4).</strong> It is stored in
-an encrypted database: Qirsh generates a random AES-256 key on first launch, stores that key in your
-operating system’s secure keystore (iOS Keychain / Android Keystore), and never ships it inside the app.
-On Android the app also sets <code>allowBackup=false</code>, which excludes this data from the operating
-system’s automatic cloud backups.</p>
-<p>If you never create an account, Qirsh works fully and we receive none of this data — ever.</p>
-
-<h2>3. Bank SMS: read entirely on your device</h2>
-<p>Qirsh can turn a bank SMS into a transaction. It is important to be precise about how:</p>
-<ul>
-  <li><strong>You paste the message yourself.</strong> The app does not request permission to read your
-  messages, and it cannot read them.</li>
-  <li><strong>The text is parsed on your device.</strong> The amount, date and merchant are extracted by
-  code running on your phone. <strong>The message is never uploaded anywhere.</strong></li>
-  <li><strong>Nothing is saved automatically.</strong> Every parsed row is shown to you for review, and
-  you choose what to keep.</li>
-</ul>
-<p>The pasted text is not stored after you leave the screen. Only the transaction you approve is saved,
-and only on your device.</p>
-
-<h2>4. Cloud backup (Qirsh Pro only, and off by default)</h2>
-<p>If you subscribe to Qirsh Pro and sign in, you can enable cloud backup so your data survives a lost or
-replaced phone. <strong>This is optional. Backup happens only if you turn it on, and signing in is never required to
-use Qirsh.</strong></p>
-
-<h3>What is uploaded</h3>
-<p>Two files: one containing your settings and plan, one containing your transactions. They are sent as
-structured data, together with an identifier for the device that sent them (used only to warn you when
-two devices have made conflicting changes) and timestamps.</p>
-
-<h3>Where it is stored</h3>
-<p>On <strong>Supabase</strong>, our hosting provider, in their <strong>Frankfurt, Germany
-(eu-central-1)</strong> region. Each user’s row is protected by database access rules so that a signed-in
-user can read and write only their own row.</p>
-
-<h3>How it is protected — stated precisely</h3>
-<table>
-  <tr><th>Where</th><th>Protection</th></tr>
-  <tr><td>On your phone</td><td>Encrypted with AES-256; the key lives in the OS secure keystore, not in the app.</td></tr>
-  <tr><td>In transit</td><td>Encrypted with TLS (HTTPS) between your phone and our provider.</td></tr>
-  <tr><td>In the cloud</td><td>Stored in a row only your account can access, on infrastructure encrypted at rest by the provider.</td></tr>
-</table>
-<p><strong>An honest limitation:</strong> the cloud copy is <em>not</em> end-to-end encrypted. It is
-protected by access controls and by our provider’s encryption, but it is not mathematically impossible
-for us or our hosting provider to read it. We do not do so, and we have no feature, tool or business
-reason to — but we would rather tell you that plainly than imply a guarantee we do not provide. Your
-<em>on-device</em> copy is the encrypted one.</p>
-
-<h3>How long we keep it</h3>
-<p>Your backup is kept until you overwrite it (the next backup replaces the previous one) or until you
-delete your account, at which point it is deleted along with everything else (§10).</p>
-
-<h2>5. Account data</h2>
-<p>An account is needed only for the assistant, for buying Qirsh Pro, and for cloud backup. When you
-create one we hold:</p>
-<ul>
-  <li>Your <strong>email address</strong>, or the identifier your provider gives us if you use Sign in
-  with Apple or Google. If you use Apple’s “Hide My Email”, we only ever see the relay address.</li>
-  <li>A <strong>display name</strong>, if you set one.</li>
-  <li>Your <strong>subscription status</strong> and its expiry, so the app knows whether Pro is active.</li>
-  <li>Account creation and update timestamps.</li>
-</ul>
-<p>We do not hold your payment details. Subscriptions are purchased and billed by
-<strong>Apple</strong> or <strong>Google</strong> through their app stores; they process the payment and
-we only receive whether your subscription is active.</p>
-<p>To keep track of subscriptions we use <strong>RevenueCat</strong>. It receives your account’s ID — a
-random identifier, not your email — and the record of your Qirsh purchases from Apple or Google, and it
-tells our server whether your subscription is active.</p>
-
-<h2>6. The assistant</h2>
-<p>Qirsh includes an assistant you can ask about your budget. It is optional and needs an account.
-<strong>Nothing is sent to it until you send it a message.</strong> It runs on an AI model provided by
-<strong>OpenAI</strong>.</p>
-
-<h3>What is sent when you send a message</h3>
-<ul>
-  <li>Your message, and the earlier messages of the same chat, so it can follow the conversation.</li>
-  <li>A short summary of your budget that the app prepares: what you planned, spent and have left since
-  your last salary, your savings and goal, your bills, your recorded balance, your category totals, and
-  your first name if you entered one.</li>
-  <li>When your question needs more detail, the figures that answer it — for example what you spent in
-  one category or at one shop, the bills coming up, or your wishes — together with the <strong>names and
-  descriptions you typed</strong> for shops, bills, categories and wishes.</li>
-  <li>Any notes you chose to save for the assistant, and your language and tone settings.</li>
-</ul>
-<p>It is <strong>not</strong> sent your email address, the bank messages you paste for import, or any
-payment details.</p>
-
-<h3>Where it goes</h3>
-<p>Your phone sends this to our server, which checks your account and your usage allowance and passes it
-to OpenAI in the <strong>United States</strong>. The reply comes back the same way. Each message is also
-checked by OpenAI’s safety filter.</p>
-
-<h3>What is kept, and where</h3>
-<table>
-  <tr><th>Where</th><th>What is kept</th></tr>
-  <tr><td>On your phone</td><td>Your chats and saved notes, encrypted with the rest of your data. You can delete a chat or a note in the app.</td></tr>
-  <tr><td>On our server</td><td>No message text and no replies. Only counters: how much of your usage allowance you have used, and when.</td></tr>
-  <tr><td>At OpenAI</td><td>We ask OpenAI not to store the conversation. Under its API terms OpenAI does not use it to train its models, and may keep a copy for up to 30 days to detect abuse before deleting it.</td></tr>
-</table>
-<p>Saved notes are part of your settings, so if you turn on cloud backup (§4) they are included in it.
-Chats are not.</p>
-
-<h3>What to keep in mind</h3>
-<p>The assistant’s numbers come from your own records in the app, but its wording is written by an AI
-model and can be wrong. It is not financial advice (see our Terms). Please do not type into the chat
-anything you would not want processed outside your phone, such as card numbers or passwords.</p>
-
-<h2>7. Crash reports</h2>
-<p>Qirsh sends anonymous crash and error reports to <strong>Sentry</strong>, so we can find and fix bugs.
-This is deliberately built to carry no personal or financial information:</p>
-<ul>
-  <li>No user identity is attached — the user field is removed from every report before it is sent.</li>
-  <li>Anything that looks financial is redacted before sending: fields whose names mention income,
-  balance, amount, savings, transaction, note, salary, merchant, IBAN or account are replaced with
-  <code>[redacted]</code>, in the error itself and in the diagnostic trail.</li>
-  <li>Long text values and request URLs are redacted rather than transmitted.</li>
-  <li>We do not enable Sentry’s optional personal-data collection (which would otherwise attach your IP
-  address or email).</li>
-  <li>Sentry also receives an anonymous count of app sessions (that the app was opened, which version,
-  and whether it crashed), so we can see what share of sessions end in a crash.</li>
-</ul>
-<p>What remains is essentially: which version of the app crashed, on what kind of device, and where in
-the code. Sentry processes this in the <strong>European Union</strong>.</p>
-
-<h2>8. App updates</h2>
-<p>The app checks Expo’s update service (<code>u.expo.dev</code>) for improvements it can install without
-a full re-download from the store. This request tells the service which app version and device platform
-is asking, with a random identifier for this installation of the app; it carries none of your financial
-data and no account information.</p>
-
-<h2>9. What we do <em>not</em> do</h2>
-<ul>
-  <li>We do not <strong>sell or rent</strong> your personal data. Ever, to anyone.</li>
-  <li>We do not show <strong>advertising</strong>, and the app contains no advertising SDK.</li>
-  <li>We do not use <strong>advertising or behaviour-tracking</strong> tools, and we do not build a
-  profile of your behaviour. There is no Google Analytics, Firebase Analytics, Facebook SDK or similar in
-  the app.</li>
-  <li>We do not use <strong>advertising identifiers</strong> and we do not track you across other apps or
-  websites.</li>
-  <li>We do not access your <strong>messages, contacts, camera, photos, microphone or
-  location</strong>, and Qirsh never asks for them.</li>
-  <li>We do not send anything to an <strong>artificial intelligence service</strong> unless you use the
-  assistant; what it receives when you do is described in §6. The bank messages you paste are never
-  sent to it.</li>
-</ul>
-
-<h2>10. Your rights</h2>
-<p>Under the Saudi PDPL and, where it applies to you, the GDPR, you have the right to access your data,
-correct it, delete it, obtain a copy of it, object to or restrict certain processing, and to complain to
-a regulator — in Saudi Arabia, the Saudi Data &amp; Artificial Intelligence Authority (SDAIA).</p>
-<p>In practice, most of these you can exercise yourself, immediately, without asking us:</p>
-<ul>
-  <li><strong>Access and correction</strong> — your data is on your phone, in the app, and every entry
-  can be edited or deleted there.</li>
-  <li><strong>Deletion</strong> — deleting the app removes the local data. To delete your <em>account</em>
-  and everything we hold in the cloud, use <strong>Profile → Account → Delete account &amp; data</strong>
-  in the app. That permanently deletes your account record, your subscription record, your assistant
-  usage counters and your cloud backup. It cannot be undone. Deleting your account does not cancel a
-  subscription bought through Apple or Google: cancel it in your App Store or Google Play account. The
-  purchase records themselves stay with the store, and with RevenueCat under your random account ID.</li>
-</ul>
-<p>For anything you cannot do in the app, write to support@qirshapp.com. We will
-respond within 30 days.</p>
-
-<h2>11. Legal basis for processing</h2>
-<table>
-  <tr><th>What</th><th>Why we may process it</th></tr>
-  <tr><td>Account email / identity</td><td>To perform the contract with you — you asked us to give you an account and cloud backup.</td></tr>
-  <tr><td>Cloud backup contents</td><td>To perform the contract — this is the service you subscribed to. You choose to enable it.</td></tr>
-  <tr><td>Subscription status</td><td>To perform the contract, and to meet our obligations to the app stores.</td></tr>
-  <tr><td>Assistant messages and the figures sent with them</td><td>To perform the contract — you asked a question, and this is what answering it takes. Nothing is sent unless you send a message.</td></tr>
-  <tr><td>Assistant usage counters</td><td>To perform the contract, and to keep the service within its limits.</td></tr>
-  <tr><td>Crash reports</td><td>Our legitimate interest in the app not being broken — minimised, and stripped of personal and financial content.</td></tr>
-  <tr><td>Update checks and session counts</td><td>Our legitimate interest in delivering fixes and knowing whether the app is stable.</td></tr>
-</table>
-
-<h2>12. International transfers</h2>
-<p>Qirsh is built for people in Saudi Arabia, and our providers have no Saudi region. Account records,
-cloud backups and assistant usage counters are therefore stored in <strong>Frankfurt, Germany</strong>
-(Supabase), and crash reports are processed in the <strong>European Union</strong> (Sentry). What you
-send to the assistant is processed in the <strong>United States</strong> (OpenAI), and so are
-subscription records (RevenueCat) and update checks (Expo).</p>
-<p>This means your personal data is transferred outside the Kingdom. We rely on the transfer conditions
-permitted by the PDPL and its implementing regulations, supported by contractual safeguards with our
-providers, and we keep the
-transferred data to the minimum described in this policy. If a Saudi region becomes available, we intend
-to migrate.</p>
-
-<h2>13. Children</h2>
-<p>Qirsh is not directed at children. You must be at least <strong>16</strong> (or the minimum age of
-digital consent where you live, if higher) to create an account. We do not knowingly collect data from
-children; if you believe a child has created an account, contact us and we will delete it.</p>
-
-<h2>14. Data breaches</h2>
-<p>If a breach affects your personal data and is likely to cause you harm, we will notify you and the
-relevant regulator without undue delay, as PDPL and GDPR require.</p>
-
-<h2>15. Changes to this policy</h2>
-<p>If we change this policy we will update the date at the top and, for any change that materially
-affects your privacy — for example a new feature that sends data somewhere new — we will tell you inside
-the app before it takes effect.</p>
-
-<h2>16. Contact</h2>
-<p>Qirsh Labs · support@qirshapp.com</p>
-
-</section>
-
-<!-- ══════════════════════════ ARABIC ══════════════════════════ -->
-<section id="ar" lang="ar" dir="rtl">
-
-<div class="lede">
-  <p><strong>باختصار.</strong> قرش تطبيق ميزانية، والميزانية نفسها تشتغل بالكامل على جوالك. ما تحتاج حساب عشان تستخدمه،
-  وبياناتك المالية — دخلك، عملياتك، أهدافك — محفوظة على جهازك ومشفّرة.</p>
-  <p>ما نبيع بياناتك. ما نعرض إعلانات. ما نستخدم أدوات تتبّع أو تحليلات. وما نقرأ رسائلك أبداً.</p>
-  <p>بدون حساب، ما يطلع من جوالك إلا <strong>معلومات الأعطال والتحديثات</strong> بدون هوية. وإذا سجّلت
-  دخول، فيه ثلاثة أشياء ثانية ممكن تطلع، وكل واحد منها باختيارك: <strong>اللي تسأل عنه المساعد</strong>
-  (سؤالك وأرقام الميزانية اللازمة للإجابة)، و<strong>حالة اشتراكك</strong>، و— إذا اشتركت في قرش برو
-  وفعّلته بنفسك — <strong>نسخة احتياطية</strong> من بياناتك عشان تقدر ترجّعها على جوال جديد. وكلها
-  مشروحة بالتفصيل تحت.</p>
-</div>
-
-<h2>١. مين إحنا</h2>
-<p>قرش (”التطبيق“) تشغّله Qirsh Labs،
-المملكة العربية السعودية. لأي شيء في هذه السياسة تواصل معنا على
-support@qirshapp.com.</p>
-<p>لأغراض نظام حماية البيانات الشخصية السعودي (PDPL) والنظام الأوروبي (GDPR)، فإن
-Qirsh Labs هو <strong>جهة التحكّم</strong> في البيانات الشخصية المحدودة
-الموضّحة هنا.</p>
-
-<h2>٢. وش يحفظ قرش على جوالك</h2>
-<p>كل شيء تدخله في قرش ينكتب في تخزين جهازك نفسه:</p>
-<ul>
-  <li>دخلك، وإعداد دورة الراتب، ويوم الراتب</li>
-  <li>العمليات اللي تضيفها أو تعدّلها أو تستوردها (المبلغ، التاريخ، التصنيف، وأي ملاحظة تكتبها)</li>
-  <li>التصنيفات، والفواتير المتكرّرة، والادخار، والأمنيات</li>
-  <li>إعداداتك — اللغة، الثيم، العملة، وإظهار الهللات من عدمه</li>
-</ul>
-<p><strong>هذي البيانات تبقى على جهازك إلا إذا فعّلت النسخ الاحتياطي السحابي (فقرة ٤).</strong> وتُحفظ في
-قاعدة بيانات مشفّرة: قرش ينشئ مفتاح AES-256 عشوائي عند أول تشغيل، ويخزّن المفتاح في مخزن المفاتيح الآمن
-في نظام تشغيل جهازك (iOS Keychain / Android Keystore)، وما يشحنه أبداً داخل التطبيق. وعلى أندرويد
-يضبط التطبيق <code>allowBackup=false</code>، وهذا يستثني البيانات من النسخ الاحتياطي التلقائي للنظام.</p>
-<p>وإذا ما أنشأت حساب أبداً، قرش يشتغل كامل وما يوصلنا أي شيء من هذي البيانات — إطلاقاً.</p>
-
-<h2>٣. رسائل البنك: تُقرأ على جهازك بالكامل</h2>
-<p>يقدر قرش يحوّل رسالة بنكية إلى عملية. ومن المهم نوضّح كيف بالضبط:</p>
-<ul>
-  <li><strong>أنت اللي تلصق الرسالة بنفسك.</strong> التطبيق ما يطلب صلاحية قراءة رسائلك، وما يقدر
-  يقرأها.</li>
-  <li><strong>النص يُحلَّل على جهازك.</strong> المبلغ والتاريخ والتاجر تُستخرج بكود يشتغل داخل جوالك.
-  <strong>الرسالة ما تُرفع لأي مكان.</strong></li>
-  <li><strong>ما يُحفظ شيء تلقائياً.</strong> كل صف يُعرض عليك للمراجعة، وأنت تختار وش تحفظ.</li>
-</ul>
-<p>النص الملصوق ما يُخزَّن بعد ما تطلع من الشاشة. يُحفظ فقط ما توافق عليه، وعلى جهازك فقط.</p>
-
-<h2>٤. النسخ الاحتياطي السحابي (لمشتركي قرش برو فقط، ومعطّل افتراضياً)</h2>
-<p>إذا اشتركت في قرش برو وسجّلت دخول، تقدر تفعّل النسخ الاحتياطي عشان بياناتك تنجو من ضياع الجوال أو
-تغييره. <strong>هذا اختياري. والنسخ الاحتياطي ما يشتغل إلا إذا فعّلته، وتسجيل الدخول ما هو شرط
-لاستخدام قرش إطلاقاً.</strong></p>
-
-<h3>وش يُرفع</h3>
-<p>ملفّين: واحد فيه إعداداتك وخطتك، وواحد فيه عملياتك. يُرسلان كبيانات منظّمة، مع معرّف للجهاز المُرسِل
-(يُستخدم فقط لتنبيهك إذا جهازين سوّوا تعديلات متعارضة) وطوابع زمنية.</p>
-
-<h3>وين تُخزَّن</h3>
-<p>لدى <strong>Supabase</strong>، مزوّد الاستضافة، في منطقة <strong>فرانكفورت — ألمانيا
-(eu-central-1)</strong>. وصف كل مستخدم محمي بقواعد وصول تضمن أن المستخدم المسجّل يقرأ ويكتب صفّه هو
-فقط.</p>
-
-<h3>كيف تُحمى — بدقة</h3>
-<table>
-  <tr><th>المكان</th><th>الحماية</th></tr>
-  <tr><td>على جوالك</td><td>مشفّرة بـ AES-256، والمفتاح في مخزن المفاتيح الآمن للنظام، مو داخل التطبيق.</td></tr>
-  <tr><td>أثناء النقل</td><td>مشفّرة بـ TLS (HTTPS) بين جوالك ومزوّدنا.</td></tr>
-  <tr><td>في السحابة</td><td>في صفّ ما يوصله إلا حسابك، على بنية تحتية مشفّرة عند التخزين من قِبل المزوّد.</td></tr>
-</table>
-<p><strong>حدّ نذكره بصراحة:</strong> النسخة السحابية <em>ليست</em> مشفّرة طرف-إلى-طرف. هي محمية بضوابط
-الوصول وبتشفير المزوّد، لكن ما هو مستحيلاً رياضياً علينا أو على مزوّد الاستضافة قراءتها. إحنا ما نسوّي
-ذلك، وما عندنا خاصية ولا أداة ولا سبب تجاري يخلينا نسوّيه — بس نفضّل نقولها لك بوضوح بدل ما نوحي بضمان
-ما نقدّمه. النسخة <em>اللي على جهازك</em> هي المشفّرة.</p>
-
-<h3>مدة الاحتفاظ</h3>
-<p>تبقى نسختك الاحتياطية إلى أن تستبدلها نسخة أحدث، أو إلى أن تحذف حسابك، وعندها تُحذف مع كل شيء آخر
-(فقرة ١٠).</p>
-
-<h2>٥. بيانات الحساب</h2>
-<p>الحساب مطلوب فقط للمساعد، ولشراء قرش برو، وللنسخ الاحتياطي السحابي. وعند إنشائه نحتفظ بـ:</p>
-<ul>
-  <li><strong>بريدك الإلكتروني</strong>، أو المعرّف اللي يعطينا إياه المزوّد إذا استخدمت تسجيل الدخول
-  عبر Apple أو Google. وإذا استخدمت ”إخفاء بريدي“ من Apple، فإحنا ما نشوف إلا العنوان الوسيط.</li>
-  <li><strong>اسم العرض</strong>، إذا ضبطته.</li>
-  <li><strong>حالة اشتراكك</strong> وتاريخ انتهائه، عشان التطبيق يعرف إذا برو مفعّل.</li>
-  <li>طوابع إنشاء الحساب وتحديثه.</li>
-</ul>
-<p>ما نحتفظ ببيانات الدفع. الاشتراكات تُشترى وتُحصَّل عبر <strong>Apple</strong> أو
-<strong>Google</strong> في متاجرهم؛ هم يعالجون الدفع، وإحنا يوصلنا فقط إذا كان اشتراكك فعّال.</p>
-<p>ولمتابعة الاشتراكات نستخدم <strong>RevenueCat</strong>. يوصله معرّف حسابك — وهو معرّف عشوائي، مو
-بريدك — وسجل مشترياتك في قرش من Apple أو Google، ويخبر خادمنا إذا كان اشتراكك فعّال.</p>
-
-<h2>٦. المساعد</h2>
-<p>في قرش مساعد تقدر تسأله عن ميزانيتك. هو اختياري ويحتاج حساب. <strong>ما يُرسل له أي شيء إلا إذا
-أرسلت له رسالة.</strong> ويشتغل على نموذج ذكاء اصطناعي من <strong>OpenAI</strong>.</p>
-
-<h3>وش يُرسل إذا أرسلت رسالة</h3>
-<ul>
-  <li>رسالتك، والرسائل السابقة في نفس المحادثة، عشان يتابع الكلام.</li>
-  <li>ملخص قصير لميزانيتك يجهّزه التطبيق: اللي خططت له وصرفته والباقي لك من آخر راتب، ادخارك وهدفك،
-  فواتيرك، رصيدك المسجّل، مجاميع الفئات، واسمك الأول إذا كتبته.</li>
-  <li>وإذا سؤالك يحتاج تفاصيل أكثر، الأرقام اللي تجاوب عليه — مثل صرفك في فئة أو عند متجر، أو الفواتير
-  الجاية، أو أمنياتك — ومعها <strong>الأسماء والأوصاف اللي كتبتها أنت</strong> للمتاجر والفواتير
-  والفئات والأمنيات.</li>
-  <li>أي ملاحظات اخترت تحفظها للمساعد، وإعدادات اللغة والأسلوب.</li>
-</ul>
-<p>و<strong>ما</strong> يُرسل له بريدك الإلكتروني، ولا رسائل البنك اللي تلصقها للاستيراد، ولا أي
-بيانات دفع.</p>
-
-<h3>وين تروح</h3>
-<p>جوالك يرسلها لخادمنا، والخادم يتحقق من حسابك ومن حد استخدامك ثم يمرّرها إلى OpenAI في
-<strong>الولايات المتحدة</strong>. والرد يرجع بنفس الطريق. وكل رسالة تمر كذلك على فلتر الأمان عند
-OpenAI.</p>
-
-<h3>وش يُحفظ، ووين</h3>
-<table>
-  <tr><th>المكان</th><th>وش يُحفظ</th></tr>
-  <tr><td>على جوالك</td><td>محادثاتك وملاحظاتك المحفوظة، مشفّرة مع باقي بياناتك. وتقدر تحذف أي محادثة أو ملاحظة من التطبيق.</td></tr>
-  <tr><td>على خادمنا</td><td>لا نص الرسائل ولا الردود. فقط عدّادات: كم استخدمت من حد استخدامك، ومتى.</td></tr>
-  <tr><td>عند OpenAI</td><td>نطلب من OpenAI ألا تخزّن المحادثة. وبموجب شروط واجهتها البرمجية ما تستخدمها لتدريب نماذجها، وقد تحتفظ بنسخة لمدة تصل إلى ٣٠ يوم لكشف إساءة الاستخدام ثم تحذفها.</td></tr>
-</table>
-<p>الملاحظات المحفوظة جزء من إعداداتك، فإذا فعّلت النسخ الاحتياطي السحابي (فقرة ٤) تدخل فيه.
-المحادثات ما تدخل.</p>
-
-<h3>وش تنتبه له</h3>
-<p>أرقام المساعد تجي من سجلاتك في التطبيق، لكن صياغة الرد يكتبها نموذج ذكاء اصطناعي وممكن تغلط. وهو
-ليس استشارة مالية (راجع الشروط). ولا تكتب في المحادثة شيء ما تبيه يُعالَج خارج جوالك، مثل أرقام
-البطاقات أو كلمات المرور.</p>
-
-<h2>٧. تقارير الأعطال</h2>
-<p>يرسل قرش تقارير أعطال وأخطاء بدون هوية إلى <strong>Sentry</strong>، عشان نلقى الأخطاء ونصلحها.
-ومصمَّمة عمداً بحيث ما تحمل أي معلومة شخصية أو مالية:</p>
-<ul>
-  <li>ما تُرفق أي هوية للمستخدم — حقل المستخدم يُحذف من كل تقرير قبل الإرسال.</li>
-  <li>أي شيء يبدو مالياً يُحجب قبل الإرسال: الحقول اللي أسماؤها تذكر الدخل أو الرصيد أو المبلغ أو
-  الادخار أو العملية أو الملاحظة أو الراتب أو التاجر أو الآيبان أو الحساب تُستبدل بـ
-  <code>[redacted]</code>، في الخطأ نفسه وفي سجل التتبّع.</li>
-  <li>النصوص الطويلة وعناوين الطلبات تُحجب بدل ما تُرسل.</li>
-  <li>ما نفعّل خاصية جمع البيانات الشخصية الاختيارية في Sentry (اللي كانت بترفق عنوان الـ IP أو بريدك).</li>
-  <li>ويوصل Sentry كذلك عدد جلسات التطبيق بدون هوية (أن التطبيق انفتح، وأي إصدار، وهل تعطّل)، عشان
-  نعرف نسبة الجلسات اللي تنتهي بعطل.</li>
-</ul>
-<p>اللي يتبقّى تقريباً: أي إصدار من التطبيق تعطّل، وعلى أي نوع جهاز، وفي أي موضع من الكود. وتُعالَج هذي
-البيانات لدى Sentry في <strong>الاتحاد الأوروبي</strong>.</p>
-
-<h2>٨. تحديثات التطبيق</h2>
-<p>يتحقق التطبيق من خدمة التحديثات <code>u.expo.dev</code> بحثاً عن تحسينات يقدر ينزّلها بدون إعادة
-تحميل كاملة من المتجر. هذا الطلب يخبر الخدمة بإصدار التطبيق ونوع المنصة، مع معرّف عشوائي لهذا التثبيت
-من التطبيق؛ وما يحمل أي بيانات مالية ولا معلومات حساب.</p>
-
-<h2>٩. وش ما نسوّيه</h2>
-<ul>
-  <li>ما <strong>نبيع ولا نؤجّر</strong> بياناتك الشخصية. أبداً، ولا لأي جهة.</li>
-  <li>ما نعرض <strong>إعلانات</strong>، وما في التطبيق أي حزمة إعلانات.</li>
-  <li>ما نستخدم أدوات <strong>إعلانات أو تتبّع سلوك</strong>، وما نبني ملفاً عن سلوكك. ما في Google
-  Analytics ولا Firebase Analytics ولا حزمة Facebook ولا ما شابه.</li>
-  <li>ما نستخدم <strong>معرّفات إعلانية</strong>، وما نتتبّعك عبر تطبيقات أو مواقع ثانية.</li>
-  <li>ما نوصل إلى <strong>رسائلك أو جهات اتصالك أو الكاميرا أو الصور أو الميكروفون أو
-  موقعك</strong>، وقرش ما يطلبها أبداً.</li>
-  <li>ما نرسل أي شيء لخدمة <strong>ذكاء اصطناعي</strong> إلا إذا استخدمت المساعد، واللي يوصله وقتها
-  مشروح في فقرة ٦. ورسائل البنك اللي تلصقها ما تُرسل له أبداً.</li>
-</ul>
-
-<h2>١٠. حقوقك</h2>
-<p>بموجب نظام حماية البيانات الشخصية السعودي، و— حيثما ينطبق عليك — النظام الأوروبي، لك الحق في الوصول
-إلى بياناتك وتصحيحها وحذفها والحصول على نسخة منها والاعتراض على معالجتها أو تقييدها، وتقديم شكوى إلى
-الجهة الرقابية — وفي السعودية هي الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا).</p>
-<p>وعملياً، أغلب هذي الحقوق تقدر تمارسها بنفسك وفوراً وبدون ما تطلب منّا شيء:</p>
-<ul>
-  <li><strong>الوصول والتصحيح</strong> — بياناتك على جوالك داخل التطبيق، وكل إدخال يمكن تعديله أو حذفه
-  من هناك.</li>
-  <li><strong>الحذف</strong> — حذف التطبيق يزيل البيانات المحلية. ولحذف <em>حسابك</em> وكل ما نحتفظ به
-  في السحابة، استخدم <strong>الملف ← الحساب ← حذف الحساب والبيانات</strong> داخل التطبيق. هذا يحذف
-  نهائياً سجل حسابك وسجل اشتراكك وعدّادات استخدامك للمساعد ونسختك الاحتياطية. ولا يمكن التراجع عنه.
-  وحذف الحساب ما يلغي اشتراكاً اشتريته عبر Apple أو Google: ألغِه من حسابك في App Store أو Google
-  Play. وسجلات الشراء نفسها تبقى عند المتجر، وعند RevenueCat تحت معرّف حسابك العشوائي.</li>
-</ul>
-<p>ولأي شيء ما تقدر تسوّيه داخل التطبيق، راسلنا على support@qirshapp.com،
-وبنرد خلال ٣٠ يوم.</p>
-
-<h2>١١. الأساس النظامي للمعالجة</h2>
-<table>
-  <tr><th>البيانات</th><th>سبب المعالجة</th></tr>
-  <tr><td>بريد/هوية الحساب</td><td>تنفيذ العقد معك — أنت طلبت حساباً ونسخاً احتياطياً.</td></tr>
-  <tr><td>محتوى النسخة الاحتياطية</td><td>تنفيذ العقد — هذي هي الخدمة اللي اشتركت فيها، وأنت تختار تفعيلها.</td></tr>
-  <tr><td>حالة الاشتراك</td><td>تنفيذ العقد، والوفاء بالتزاماتنا تجاه المتاجر.</td></tr>
-  <tr><td>رسائل المساعد والأرقام المرسلة معها</td><td>تنفيذ العقد — أنت سألت، وهذا اللي تحتاجه الإجابة. وما يُرسل شيء إلا إذا أرسلت رسالة.</td></tr>
-  <tr><td>عدّادات استخدام المساعد</td><td>تنفيذ العقد، وإبقاء الخدمة ضمن حدودها.</td></tr>
-  <tr><td>تقارير الأعطال</td><td>مصلحتنا المشروعة في ألا يكون التطبيق معطّلاً — مُقلّلة ومجرّدة من المحتوى الشخصي والمالي.</td></tr>
-  <tr><td>التحقق من التحديثات وعدد الجلسات</td><td>مصلحتنا المشروعة في إيصال الإصلاحات ومعرفة استقرار التطبيق.</td></tr>
-</table>
-
-<h2>١٢. النقل خارج المملكة</h2>
-<p>قرش مبني لناس في السعودية، ومزوّدونا ما عندهم منطقة سعودية. لذلك تُخزَّن سجلات الحسابات والنسخ
-الاحتياطية وعدّادات استخدام المساعد في <strong>فرانكفورت — ألمانيا</strong> (Supabase)، وتُعالَج
-تقارير الأعطال في <strong>الاتحاد الأوروبي</strong> (Sentry). واللي ترسله للمساعد يُعالَج في
-<strong>الولايات المتحدة</strong> (OpenAI)، وكذلك سجلات الاشتراك (RevenueCat) وطلبات التحقق من
-التحديثات (Expo).</p>
-<p>وهذا يعني نقل بياناتك الشخصية خارج المملكة. ونعتمد في ذلك على حالات النقل اللي يجيزها نظام حماية
-البيانات الشخصية ولائحته التنفيذية، مدعومة بضمانات تعاقدية مع مزوّدينا، ونحصر
-البيانات المنقولة في الحد الأدنى الموضّح في هذي السياسة. وإذا توفّرت منطقة سعودية، ننوي الانتقال إليها.</p>
-
-<h2>١٣. الأطفال</h2>
-<p>قرش ما هو موجّه للأطفال. يلزم أن يكون عمرك <strong>١٦</strong> سنة على الأقل (أو السن النظامي للموافقة
-الرقمية في بلدك إذا كان أعلى) لإنشاء حساب. وما نجمع بيانات أطفال عن علم؛ وإذا تعتقد أن طفلاً أنشأ حساباً،
-تواصل معنا وبنحذفه.</p>
-
-<h2>١٤. تسريب البيانات</h2>
-<p>إذا وقع تسريب يمسّ بياناتك الشخصية ويُرجَّح أن يسبب لك ضرراً، بنبلّغك وبنبلّغ الجهة الرقابية دون
-تأخير غير مبرر، وفق ما يتطلبه النظامان السعودي والأوروبي.</p>
-
-<h2>١٥. تغييرات هذي السياسة</h2>
-<p>إذا غيّرنا السياسة بنحدّث التاريخ في الأعلى، وأي تغيير يؤثر جوهرياً على خصوصيتك — مثل خاصية جديدة
-ترسل بيانات لمكان جديد — بنخبرك فيه داخل التطبيق قبل ما يسري.</p>
-
-<h2>١٦. التواصل</h2>
-<p>Qirsh Labs · support@qirshapp.com</p>
-
-</section>
-
-<footer>
-  Qirsh · قرش — Qirsh Labs · support@qirshapp.com
-</footer>
-
-</div>
-<script>
-  (function () {
-    var bEn = document.getElementById('btn-en'), bAr = document.getElementById('btn-ar');
-    function show(lang) {
-      var isAr = lang === 'ar';
-      // A class on the root, not `hidden` on the sections — so the no-JS fallback in <head> holds.
-      document.documentElement.classList.toggle('lang-ar', isAr);
-      bAr.setAttribute('aria-pressed', String(isAr));
-      bEn.setAttribute('aria-pressed', String(!isAr));
-      document.documentElement.lang = lang;
-      try { localStorage.setItem('qirsh-legal-lang', lang); } catch (e) {}
-    }
-    bEn.addEventListener('click', function () { show('en'); });
-    bAr.addEventListener('click', function () { show('ar'); });
-    var saved = null;
-    try { saved = localStorage.getItem('qirsh-legal-lang'); } catch (e) {}
-    show(saved || ((navigator.language || '').slice(0, 2) === 'ar' ? 'ar' : 'en'));
-  })();
-</script>
+  <div class="l-ar" lang="ar" dir="rtl">
+    <p class="links"><a href="/">الرئيسية</a><a href="/support">الدعم</a><a href="/privacy">الخصوصية</a><a href="/terms">الشروط</a></p>
+    <p>للتواصل: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+    <p class="fine">© 2026 قرش · المملكة العربية السعودية</p>
+  </div>
+</div></footer>
+<script>(function(){var d=document.documentElement;
+function set(l){d.className=d.className.replace(/\blang-(ar|en)\b/,'lang-'+l);d.lang=l;d.dir=l==='ar'?'rtl':'ltr';
+try{localStorage.setItem('qirsh-lang',l)}catch(e){}}
+var b=document.querySelectorAll('[data-lang-toggle]');
+for(var i=0;i<b.length;i++){b[i].addEventListener('click',function(){set(d.lang==='ar'?'en':'ar')})}
+function go(){var h=location.hash.slice(1).replace(/-ar$/,'');if(!h)return;
+var el=(d.lang==='ar'&&document.getElementById(h+'-ar'))||document.getElementById(h);if(el)el.scrollIntoView()}
+window.addEventListener('hashchange',go);go();})();</script>
 </body>
 </html>
