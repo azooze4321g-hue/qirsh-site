@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://qirshapp.com/sitemap.xml
