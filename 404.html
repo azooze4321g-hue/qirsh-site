@@ -24,16 +24,17 @@ for(var i=0;i<n.length;i++){if(/^ar\b/i.test(n[i])){l='ar';break}}}
 d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content"><span class="l-en">Skip to content</span><span class="l-ar">انتقل للمحتوى</span></a>
 <header class="top"><div class="bar">
   <a class="brand" href="/"><img src="/assets/img/icon-192.png" alt="" width="36" height="36"><span class="l-en">Qirsh</span><span class="l-ar">قرش</span></a>
-  <nav aria-label="Main">
+  <nav aria-label="Main navigation" data-label-en="Main navigation" data-label-ar="التنقل الرئيسي">
     <a href="/#features"><span class="l-en">Features</span><span class="l-ar">المميزات</span></a>
     <a href="/support"><span class="l-en">Support</span><span class="l-ar">الدعم</span></a>
     <a href="/privacy"><span class="l-en">Privacy</span><span class="l-ar">الخصوصية</span></a>
   </nav>
   <button class="lang" type="button" data-lang-toggle><span class="l-en" lang="ar">العربية</span><span class="l-ar" lang="en">English</span></button>
 </div></header>
-<main>
+<main id="main-content" tabindex="-1">
 <div class="doc l-en" lang="en" dir="ltr">
   <h1>This page does not exist</h1>
   <p class="lede">The link may be old or mistyped.</p>
@@ -41,9 +42,9 @@ d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
 </div>
 
 <div class="doc l-ar" lang="ar" dir="rtl">
-  <h1>هذي الصفحة مو موجودة</h1>
-  <p class="lede">يمكن الرابط قديم أو مكتوب غلط.</p>
-  <p><a href="/">ارجع للرئيسية</a></p>
+  <h1>الصفحة غير موجودة</h1>
+  <p class="lede">يمكن تغيّر الرابط، أو فيه خطأ في العنوان.</p>
+  <p><a href="/">الرجوع للرئيسية</a></p>
 </div>
 
 </main>
@@ -61,11 +62,16 @@ d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
 </div></footer>
 <script>(function(){var d=document.documentElement;
 function set(l){d.className=d.className.replace(/\blang-(ar|en)\b/,'lang-'+l);d.lang=l;d.dir=l==='ar'?'rtl':'ltr';
-try{localStorage.setItem('qirsh-lang',l)}catch(e){}}
+try{localStorage.setItem('qirsh-lang',l)}catch(e){}
+try{var u=new URL(location.href);u.searchParams.set('lang',l);
+var h=u.hash.slice(1).replace(/-ar$/,'');var target=l==='ar'?h+'-ar':h;
+if(h&&document.getElementById(target))u.hash=target;
+history.replaceState(null,'',u.pathname+u.search+u.hash)}catch(e){}labels();go()}
+function labels(){var n=document.querySelectorAll('[data-label-en]');for(var i=0;i<n.length;i++)n[i].setAttribute('aria-label',n[i].getAttribute('data-label-'+d.lang))}
 var b=document.querySelectorAll('[data-lang-toggle]');
 for(var i=0;i<b.length;i++){b[i].addEventListener('click',function(){set(d.lang==='ar'?'en':'ar')})}
 function go(){var h=location.hash.slice(1).replace(/-ar$/,'');if(!h)return;
 var el=(d.lang==='ar'&&document.getElementById(h+'-ar'))||document.getElementById(h);if(el)el.scrollIntoView()}
-window.addEventListener('hashchange',go);go();})();</script>
+window.addEventListener('hashchange',go);labels();go();})();</script>
 </body>
 </html>

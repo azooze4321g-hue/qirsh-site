@@ -24,20 +24,28 @@ for(var i=0;i<n.length;i++){if(/^ar\b/i.test(n[i])){l='ar';break}}}
 d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content"><span class="l-en">Skip to content</span><span class="l-ar">انتقل للمحتوى</span></a>
 <header class="top"><div class="bar">
   <a class="brand" href="/"><img src="/assets/img/icon-192.png" alt="" width="36" height="36"><span class="l-en">Qirsh</span><span class="l-ar">قرش</span></a>
-  <nav aria-label="Main">
+  <nav aria-label="Main navigation" data-label-en="Main navigation" data-label-ar="التنقل الرئيسي">
     <a href="/#features"><span class="l-en">Features</span><span class="l-ar">المميزات</span></a>
-    <a href="/support"><span class="l-en">Support</span><span class="l-ar">الدعم</span></a>
+    <a href="/support" aria-current="page"><span class="l-en">Support</span><span class="l-ar">الدعم</span></a>
     <a href="/privacy"><span class="l-en">Privacy</span><span class="l-ar">الخصوصية</span></a>
   </nav>
   <button class="lang" type="button" data-lang-toggle><span class="l-en" lang="ar">العربية</span><span class="l-ar" lang="en">English</span></button>
 </div></header>
-<main>
+<main id="main-content" tabindex="-1">
 <div class="doc l-en" lang="en" dir="ltr">
   <h1>Support</h1>
   <p class="lede">For questions, problems or feedback about Qirsh, contact us below.</p>
-  <div class="note"><p>Email: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p><p>If a number looks wrong, you can include a screenshot. Hide personal and financial details unrelated to the problem.</p></div>
+  <nav class="support-topics" aria-label="Support topics">
+    <a href="#questions">Common questions</a><a href="#refunds">Cancellation &amp; refunds</a><a href="#delete">Delete account</a>
+  </nav>
+  <div class="note contact">
+    <p class="contact-label">Email us</p><p class="contact-address"><a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+    <p>For a problem, tell us what happened, what you expected and which phone you use. Include the app version if you know it.</p>
+    <p>If a number looks wrong, you can include a screenshot. Hide personal and financial details unrelated to the problem. Never send passwords, verification codes or card details.</p>
+  </div>
 
   <h2 id="delete">Delete your account and data</h2>
   <p>You can use Qirsh without an account. If you did create one, you can delete it at any time:</p>
@@ -49,21 +57,29 @@ d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
   <p><b>Separate records:</b> store purchases, provider logs and backups, and any records retained for support or legal duties may remain for their applicable retention periods. See the <a href="/privacy">Privacy Policy</a>. Deleting the account does not cancel a subscription or request a refund; manage these separately through the store.</p>
   <p>If you cannot open the app, email <a href="mailto:support@qirshapp.com">support@qirshapp.com</a> and ask us to delete the account. Use your account email if you can; we may need to verify your identity. Data-rights requests follow the statutory periods described in the Privacy Policy.</p>
 
-  <h2>Cancellation and refunds</h2>
+  <h2 id="refunds">Cancellation and refunds</h2>
   <p>Cancel renewal in your Apple App Store or Google Play subscription settings. For refunds, use <a href="https://support.apple.com/118223">Apple’s refund process</a> or <a href="https://support.google.com/googleplay/answer/2479637">Google Play’s refund process</a>. For a Google Play purchase, you can also contact us with its order reference; do not send card details. Cancellation does not automatically refund a past charge. We offer no additional money-back guarantee; store rules and mandatory consumer rights apply. See the <a href="/terms">Terms</a>.</p>
 
-  <h2>Common questions</h2>
+  <h2 id="questions">Common questions</h2>
+  <details><summary>Can I download Qirsh yet?</summary><p>Qirsh is still being prepared for launch on iPhone and Android. There is no public download or confirmed launch date yet.</p></details>
   <details><summary>Do I need an account?</summary><p>The core budget works on your phone without an account and without internet. An account is needed for the assistant, buying or restoring Pro, and cloud backup.</p></details>
-  <details><summary>Does Qirsh read my SMS?</summary><p>No. Qirsh never asks for permission to read your messages. You paste a bank message yourself, and it is read on your phone only.</p></details>
+  <details><summary>Does Qirsh read my messages automatically?</summary><p>No. You choose which bank message to paste. The importer reads that text on your phone, without permission to access your inbox.</p></details>
   <details><summary>Which bank messages does it understand?</summary><p>Purchase messages from Al Rajhi Bank and Bank AlJazira today. You always review what Qirsh found before it is saved, and adding an expense by hand works with any bank.</p></details>
-  <details><summary>Is Qirsh connected to my bank account?</summary><p>No. Qirsh cannot see or move your money. It only knows what you enter or paste.</p></details>
+  <details><summary>Is Qirsh connected to my bank account?</summary><p>No. Qirsh does not connect to your bank account or make transfers or payments. It uses the records you enter or import.</p></details>
   <details><summary>Is Qirsh financial advice?</summary><p>No. Qirsh is a budgeting tool that helps you see your own numbers. It is not a licensed financial adviser.</p></details>
 </div>
 
 <div class="doc l-ar" lang="ar" dir="rtl">
   <h1>الدعم</h1>
-  <p class="lede">عندك سؤال أو مشكلة أو ملاحظة عن قرش؟ تواصل معنا على الإيميل تحت.</p>
-  <div class="note"><p>الإيميل: <a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p><p>إذا فيه رقم تشوفه غلط، تقدر ترفق صورة للشاشة. غطِّ أي معلومات شخصية أو مالية ما لها علاقة بالمشكلة.</p></div>
+  <p class="lede">عندك سؤال أو واجهتك مشكلة؟ راسلنا.</p>
+  <nav class="support-topics" aria-label="مواضيع الدعم">
+    <a href="#questions-ar">أسئلة شائعة</a><a href="#refunds-ar">الإلغاء والاسترداد</a><a href="#delete-ar">حذف الحساب</a>
+  </nav>
+  <div class="note contact">
+    <p class="contact-label">راسلنا على</p><p class="contact-address"><a href="mailto:support@qirshapp.com">support@qirshapp.com</a></p>
+    <p>إذا واجهتك مشكلة، اذكر وش صار، وش كنت تتوقع، ونوع جوالك. وإذا تعرف إصدار التطبيق، أضفه للرسالة.</p>
+    <p>إذا المشكلة في رقم، تقدر ترفق صورة للشاشة. غطِّ أي معلومات شخصية أو مالية ما لها علاقة بالمشكلة. لا ترسل كلمات مرور أو رموز تحقق أو بيانات بطاقة.</p>
+  </div>
 
   <h2 id="delete-ar">حذف حسابك وبياناتك</h2>
   <p>تقدر تستخدم قرش بدون حساب. وإذا سويت حساب، تقدر تحذفه أي وقت:</p>
@@ -75,14 +91,15 @@ d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
   <p><b>سجلات منفصلة:</b> مشتريات المتجر وسجلات المزوّدين ونسخهم الاحتياطية وأي سجلات للدعم أو واجبات نظامية ممكن تبقى خلال مدد الاحتفاظ المطبّقة عليها. راجع <a href="/privacy">سياسة الخصوصية</a>. حذف الحساب ما يلغي الاشتراك ولا يطلب استرداد المبلغ؛ تديرها بشكل منفصل من المتجر.</p>
   <p>إذا ما تقدر تفتح التطبيق، راسلنا على <a href="mailto:support@qirshapp.com">support@qirshapp.com</a> واطلب حذف الحساب. استخدم إيميل حسابك إذا تقدر؛ ممكن نحتاج نتحقق من هويتك. طلبات حقوق البيانات تتبع المدد النظامية الموضّحة في سياسة الخصوصية.</p>
 
-  <h2>الإلغاء واسترداد المبلغ</h2>
+  <h2 id="refunds-ar">الإلغاء واسترداد المبلغ</h2>
   <p>تقدر تلغي التجديد من إعدادات اشتراكك في Apple App Store أو Google Play. وللاسترداد، استخدم <a href="https://support.apple.com/118223">إجراء الاسترداد لدى Apple</a> أو <a href="https://support.google.com/googleplay/answer/2479637">إجراء الاسترداد لدى Google Play</a>. ولمشتريات Google Play تقدر أيضاً تراسلنا برقم الطلب؛ لا ترسل بيانات البطاقة. الإلغاء ما يرجّع تلقائياً مبلغاً سبق دفعه. ما نقدّم ضماناً إضافياً لاسترجاع المبلغ؛ قواعد المتجر وحقوق المستهلك الإلزامية تبقى سارية. راجع <a href="/terms">الشروط</a>.</p>
 
-  <h2>أسئلة شائعة</h2>
-  <details><summary>لازم أسوي حساب؟</summary><p>الميزانية الأساسية تشتغل في جوالك بدون حساب وبدون إنترنت. الحساب تحتاجه للمساعد وشراء برو أو استعادته والنسخ الاحتياطي السحابي.</p></details>
-  <details><summary>قرش يقرأ رسائلي؟</summary><p>لا. قرش ما يطلب إذن قراءة الرسائل أبداً. أنت تلصق رسالة البنك بنفسك، وتُقرأ داخل جوالك بس.</p></details>
-  <details><summary>أي رسائل بنوك يفهمها؟</summary><p>رسائل الشراء من مصرف الراجحي وبنك الجزيرة حالياً. ودايم تراجع اللي طلّعه قرش قبل ما ينحفظ، وإضافة المصروف يدوي تمشي مع أي بنك.</p></details>
-  <details><summary>قرش مربوط بحسابي البنكي؟</summary><p>لا. قرش ما يشوف فلوسك ولا يحرّكها. يعرف بس اللي تدخله أو تلصقه.</p></details>
+  <h2 id="questions-ar">أسئلة شائعة</h2>
+  <details><summary>أقدر أحمّل قرش الحين؟</summary><p>قرش قيد التجهيز للإطلاق على آيفون وأندرويد. للحين ما فيه تحميل عام أو موعد إطلاق مؤكّد.</p></details>
+  <details><summary>هل أحتاج حساب؟</summary><p>تقدر تستخدم الميزانية الأساسية على جوالك بدون حساب أو إنترنت. تحتاج حسابًا للمساعد، وشراء برو أو استعادته، والنسخ الاحتياطي السحابي.</p></details>
+  <details><summary>هل قرش يقرأ رسائلي تلقائيًا؟</summary><p>لا. أنت تختار رسالة البنك وتلصقها بنفسك. أداة الاستيراد تقرأ النص داخل جوالك، بدون صلاحية الوصول لباقي رسائلك.</p></details>
+  <details><summary>أي رسائل بنكية يدعمها؟</summary><p>حاليًا، يدعم استيراد رسائل الشراء من مصرف الراجحي وبنك الجزيرة. تراجع تفاصيل العملية قبل حفظها، وتقدر تضيف أي مصروف يدويًا مهما كان بنكك.</p></details>
+  <details><summary>هل قرش مرتبط بحسابي البنكي؟</summary><p>لا. ما يتصل بحسابك البنكي ولا ينفّذ تحويلات أو مدفوعات. يعتمد على البيانات اللي تدخلها أو تستوردها.</p></details>
   <details><summary>قرش يعطي نصايح مالية؟</summary><p>لا. قرش أداة ميزانية تساعدك تشوف أرقامك. ما هو مستشار مالي مرخّص.</p></details>
 </div>
 
@@ -101,11 +118,16 @@ d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
 </div></footer>
 <script>(function(){var d=document.documentElement;
 function set(l){d.className=d.className.replace(/\blang-(ar|en)\b/,'lang-'+l);d.lang=l;d.dir=l==='ar'?'rtl':'ltr';
-try{localStorage.setItem('qirsh-lang',l)}catch(e){}}
+try{localStorage.setItem('qirsh-lang',l)}catch(e){}
+try{var u=new URL(location.href);u.searchParams.set('lang',l);
+var h=u.hash.slice(1).replace(/-ar$/,'');var target=l==='ar'?h+'-ar':h;
+if(h&&document.getElementById(target))u.hash=target;
+history.replaceState(null,'',u.pathname+u.search+u.hash)}catch(e){}labels();go()}
+function labels(){var n=document.querySelectorAll('[data-label-en]');for(var i=0;i<n.length;i++)n[i].setAttribute('aria-label',n[i].getAttribute('data-label-'+d.lang))}
 var b=document.querySelectorAll('[data-lang-toggle]');
 for(var i=0;i<b.length;i++){b[i].addEventListener('click',function(){set(d.lang==='ar'?'en':'ar')})}
 function go(){var h=location.hash.slice(1).replace(/-ar$/,'');if(!h)return;
 var el=(d.lang==='ar'&&document.getElementById(h+'-ar'))||document.getElementById(h);if(el)el.scrollIntoView()}
-window.addEventListener('hashchange',go);go();})();</script>
+window.addEventListener('hashchange',go);labels();go();})();</script>
 </body>
 </html>
