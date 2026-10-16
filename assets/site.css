@@ -87,8 +87,11 @@ h2{font-size:clamp(26px,3.4vw,36px);line-height:1.2;margin:0 0 10px;font-weight:
 .checks li::before{content:"✓";position:absolute;inset-inline-start:0;top:0;color:var(--green);font-weight:700}
 @media (max-width:700px){.checks{grid-template-columns:1fr}}
 
-.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:860px}
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:860px;margin-top:24px}
 .plans .card.pro{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.plan-features{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:12px}
+.plan-features li{position:relative;padding-inline-start:24px;font-size:16px}
+.plan-features li::before{content:"✓";position:absolute;inset-inline-start:0;color:var(--green);font-weight:700}
 .tag{display:inline-block;font-size:13px;font-weight:700;color:var(--gold);background:var(--gold-soft);border-radius:999px;padding:3px 12px;margin-bottom:10px}
 .fineprint{color:var(--muted);font-size:14px;margin:14px 0 0}
 @media (max-width:700px){.plans{grid-template-columns:1fr}}
