@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com about:; connect-src https://challenges.cloudflare.com; style-src 'unsafe-inline'; img-src data: https://challenges.cloudflare.com; base-uri 'none'; form-action 'none'">
+<title>Qirsh verification</title>
+<style>body{margin:0;padding:16px;font-family:system-ui,sans-serif;color:#29251f;background:#fff}#challenge{display:flex;justify-content:center}#status{text-align:center}</style>
+</head>
+<body>
+<p id="status" role="status">Loading verification…</p>
+<div id="challenge"></div>
+<script>
+(function () {
+  'use strict';
+  var params = new URLSearchParams(location.hash.slice(1));
+  var attempt = params.get('attempt') || '';
+  var action = params.get('action') || '';
+  var siteKey = params.get('key') || '';
+  var lang = params.get('lang') === 'ar' ? 'ar' : 'en';
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  var status = document.getElementById('status');
+  status.textContent = lang === 'ar' ? 'جاري تحميل التحقّق…' : 'Loading verification…';
+  function send(type, token) {
+    var message = { version: 1, attemptId: attempt, type: type };
+    if (type === 'token') message.token = token;
+    if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(JSON.stringify(message));
+  }
+  window.qirshChallengeLoaded = function () {
+    if (!/^[A-Za-z0-9-]{1,80}$/.test(attempt) || !/^[A-Za-z0-9_-]{3,128}$/.test(siteKey)
+      || ['sign_in', 'sign_up', 'password_reset'].indexOf(action) === -1) { send('error'); return; }
+    status.textContent = '';
+    window.turnstile.render('#challenge', {
+      // Flexible needs 300px plus the page's 32px padding; compact is 150x140px.
+      sitekey: siteKey, action: action, language: lang, theme: 'light', size: window.innerWidth < 332 ? 'compact' : 'flexible',
+      retry: 'never', 'refresh-expired': 'never', 'refresh-timeout': 'never',
+      callback: function (token) { send('token', token); },
+      'expired-callback': function () { send('expired'); },
+      'error-callback': function () { send('error'); },
+      'timeout-callback': function () { send('expired'); }
+    });
+  };
+})();
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=qirshChallengeLoaded&amp;render=explicit" async defer></script>
+</body>
+</html>
+
