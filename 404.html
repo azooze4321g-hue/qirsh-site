@@ -68,7 +68,8 @@ d.className+=' js lang-'+l;d.lang=l;d.dir=l==='ar'?'rtl':'ltr';})();</script>
   </div>
 </div></footer>
 <script>(function(){var d=document.documentElement;
-function set(l){d.className=d.className.replace(/\blang-(ar|en)\b/,'lang-'+l);d.lang=l;d.dir=l==='ar'?'rtl':'ltr';
+function set(l){var old=document.querySelectorAll('.l-'+d.lang+' video');for(var i=0;i<old.length;i++)old[i].pause();
+d.className=d.className.replace(/\blang-(ar|en)\b/,'lang-'+l);d.lang=l;d.dir=l==='ar'?'rtl':'ltr';
 try{localStorage.setItem('qirsh-lang',l)}catch(e){}
 try{var u=new URL(location.href);u.searchParams.set('lang',l);
 var h=u.hash.slice(1).replace(/-ar$/,'');var target=l==='ar'?h+'-ar':h;
